@@ -5,7 +5,7 @@ Repo for pdf to excel project
 
 !pip install pdf2image<br>
 !apt-get install poppler-utils<br>
-!python3 -m pip install paddlepaddle-gpu<br>
+!pip install paddlepaddle-gpu==2.3.0.post110 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html<br>
 !pip install "paddleocr>=2.0.1"<br>
 !pip install protobuf==3.20.0<br>
 !git clone https://github.com/PaddlePaddle/PaddleOCR.git<br>
