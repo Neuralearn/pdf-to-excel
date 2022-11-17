@@ -53,7 +53,7 @@ def get_csv(csv_path,im,pg,tab,x_1,x_2,y_1,y_2):
   image_cv = cv2.imread(image_path)
   image_height = image_cv.shape[0]
   image_width = image_cv.shape[1]
-  output = ocr.ocr(image_path)
+  output = ocr.ocr(image_path)[0]
 
   boxes = [line[0] for line in output]
   texts = [line[1][0] for line in output]
