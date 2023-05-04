@@ -148,6 +148,7 @@ def create_tables(pdf_dir,out_dir):
     except:
       print('exists')
     print('->',pdf_dir+ind)
+    images = []
     try:
       images = convert_from_path(pdf_dir+ind)
     except:
