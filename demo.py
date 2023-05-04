@@ -131,7 +131,8 @@ def get_csv(csv_path,im,pg,tab,x_1,x_2,y_1,y_2):
           out_array[i][j] = texts[b]
 
   out_array = np.array(out_array)
-  pd.DataFrame(out_array).to_csv(csv_path+str(pg)+'_'+str(tab)+'.csv')
+  output_filename = os.path.join(csv_path, f"{str(pg)}_{str(tab)}.csv")
+  pd.DataFrame(out_array).to_csv(output_filename)
   return None
 
 def create_tables(pdf_dir,out_dir):
