@@ -1,4 +1,3 @@
-# update by Ico no Yuri
 
 import argparse
 import layoutparser as lp
@@ -10,6 +9,7 @@ import tensorflow as tf
 import os
 from pdf2image import convert_from_path
 from paddleocr import PaddleOCR, draw_ocr
+import os
 
 model = lp.PaddleDetectionLayoutModel(config_path="lp://PubLayNet/ppyolov2_r50vd_dcn_365e_publaynet/config",
                                 threshold=0.5,
@@ -149,10 +149,11 @@ def create_tables(pdf_dir,out_dir):
       os.mkdir(csv_path)
     except:
       print('exists')
-    print('->',pdf_dir+ind)
+    file_name = os.path.join(pdf_dir, ind)
+    print('->',file_name)
     images = []
     try:
-      images = convert_from_path(pdf_dir+ind)
+      images = convert_from_path(file_name)
     except:
       print('not a pdf!')
     k=1
